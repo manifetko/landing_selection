@@ -9,6 +9,18 @@
     @content;
   }
 }
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/gilroy-regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/gilroy-bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
 @import "normalize";
 @import "base";
 @import "./blocks/header.scss";

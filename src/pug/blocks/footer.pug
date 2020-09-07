@@ -1,0 +1,42 @@
+footer(class="footer")
+    div(class="footer__container container")
+        div(class="footer__row")
+            img(src="./imgs/logo.png" class="logo")
+            div(class="address")
+                svg(width="18" height="26" viewBox="0 0 18 26")
+                    use(xlink:href="./imgs/sprites.svg#address")
+                div(class="address__text") 
+                    p(class="address__text-style") 123454, г . Удмиртия 
+                    p() мкр. "Малинина душа" 
+                    p() ул. саранкой песни 1, корпус 2
+            a(href="tel:88000000000" class="footer__phone")
+                svg(width="20" height="20" viewBox="0 0 20 20")
+                    use(xlink:href="./imgs/sprites.svg#phone-blue")
+                span(class="footer__phone-text") 8 800-000-00-00
+            a(href="mailto:mailmail@mail.ru" class="footer__mail")
+                svg(width="18" height="14" viewBox="0 0 18 14")
+                    use(xlink:href="./imgs/sprites.svg#mail")
+                span(class="footer__mail-text") mailmail@mail.ru
+        div(class="footer__content")
+            div(class="footer__content-inner")
+                h1(class="footer__heading") Хотите получить консультацию ?
+                div(class="footer__text") 
+                    p() Закажите звонок, оставив  контакты,
+                    p() мы перезвоним вам в кратчайшие сроки
+                a(href="tel:88000000000" class="footer__content-phone")
+                    svg(width="23" height="24" viewBox="0 0 23 24")
+                        use(xlink:href="./imgs/sprites.svg#phone-white")
+                    span(class="footer__phone-text") 8 800-000-00-00
+                div(class="footer__content-buttons")
+                    a(class="btn btn_black") 
+                        svg(width="23" height="23" viewBox="0 0 23 23")
+                            use(xlink:href="./imgs/sprites.svg#document")
+                        span(class="btn-text") Документация
+                    a(class="btn btn_black") Служба финансово  надзора Республики Адыг
+                div(class="footer__copyright") Микрорайон «Малинина душа» Застройщик ООО «СУК» Генеральный подрядчик ООО «ГК «Серегарад»»
+            form(class="footer__form")
+                input(type="text" class="footer__form-input" placeholder="Ваше имя")
+                div(class="footer__input-wrap")
+                    input(type="email" class="footer__form-input" placeholder="E-mail")
+                    input(type="tel" class="footer__form-input" placeholder="Телефон")
+                button(type="submit" class="footer__form-submit") Заказать звонок
