@@ -1,45 +1,52 @@
 header(class="header")
-    div(class="header__container container")
-        div(class="header__row")
-            img(class="logo" src="./imgs/logo.png")
-            nav(class="nav")
-                ul(class="nav__list")
-                    li(class="nav__item") О продукте
-                    li(class="nav__item active") Выбор продукты
-                    li(class="nav__item") Условия покупки
-                    li(class="nav__item") Ход производства
-                    li(class="nav__item") Контакты
-            a(href="tel:84957775500" class="btn header__phone") 
-                svg(width="16" height="16" viewBox="0 0 16 16") 
-                    use(xlink:href="./imgs/sprites.svg#phone-painted-white")
-                span(class="btn-text") 8 495-777-55-00
-        div(class="header__content")
-            div(class="header__content-inner")
-                h1(class="header__heading") Пора купить продукт
-                h1(class="header__heading-style") больно пора
-                div(class="header__text") 30 минут до ближайшего города
-                div(class="header__content-buttons")
-                    a(class="btn header__select-btn") 
-                        svg(width="16" height="16" viewBox="0 0 16 16")
-                            use(xlink:href="./imgs/sprites.svg#select-btn")
-                        span(class="btn-text") Выбрать продукт
-                    a(class="btn btn_black")
-                        svg(width="16" height="16" viewBox="0 0 16 16") 
-                            use(xlink:href="./imgs/sprites.svg#phone-painted-white")
-                        span(class="btn-text") Заказать звонок
-            ul(class="header__buttons")
-                li(class="header__buttons-item")
-                    a(class="btn btn_black")
-                        svg(width="40" height="40" viewBox="0 0 40 40") 
-                            use(xlink:href="./imgs/sprites.svg#shops")
-                        span(class="btn-text") Магазины
-                li(class="header__buttons-item")
-                    a(class="btn btn_black") 
-                        svg(width="40" height="40" viewBox="0 0 40 40")
-                            use(xlink:href="./imgs/sprites.svg#cars")
-                        span(class="btn-text") Машины
-                li(class="header__buttons-item")
-                    a(class="btn btn_black")
-                        svg(width="41" height="40" viewBox="0 0 41 40")
-                            use(xlink:href="./imgs/sprites.svg#doors")
-                        span(class="btn-text") Двери
+    div(class="container")
+        div(class="header__container")
+            div(class="header__row")
+                a(class="logo" href="./index.html")
+                    img(src="./imgs/logo.png")
+                nav(class="nav")
+                    ul(class="nav__list")
+                        li(class="nav__item") 
+                            a(class="nav__item-link") О продукте
+                        li(class="nav__item active") 
+                            a(class="nav__item-link") Выбор продукты
+                        li(class="nav__item") 
+                            a(class="nav__item-link") Условия покупки
+                        li(class="nav__item")
+                            a(class="nav__item-link")  Ход производства
+                        li(class="nav__item") 
+                            a(class="nav__item-link") Контакты
+                a(href="tel:84957775500" class="btn header__phone") 
+                    svg(width="16" height="16" viewBox="0 0 16 16") 
+                        use(xlink:href="./imgs/sprites.svg#phone-painted-white")
+                    span(class="btn-text") 8 495-777-55-00
+            div(class="header__content")
+                div(class="header__content-inner")
+                    h1(class="header__heading") Пора купить продукт
+                    h1(class="header__heading-style") больно пора
+                    div(class="header__text") 30 минут до ближайшего города
+                    div(class="header__content-btns")
+                        a(class="btn header__select-btn") 
+                            svg(width="16" height="16" viewBox="0 0 16 16")
+                                use(xlink:href="./imgs/sprites.svg#select-btn")
+                            span(class="btn-text") Выбрать продукт
+                        a(class="btn btn_black")
+                            svg(width="16" height="16" viewBox="0 0 16 16") 
+                                use(xlink:href="./imgs/sprites.svg#phone-painted-white")
+                            span(class="btn-text") Заказать звонок
+                ul(class="header__buttons")
+                    li(class="header__buttons-item")
+                        a(class="btn btn_black")
+                            svg(width="40" height="40" viewBox="0 0 40 40") 
+                                use(xlink:href="./imgs/sprites.svg#shops")
+                            span(class="btn-text") Магазины
+                    li(class="header__buttons-item")
+                        a(class="btn btn_black") 
+                            svg(width="40" height="40" viewBox="0 0 40 40")
+                                use(xlink:href="./imgs/sprites.svg#cars")
+                            span(class="btn-text") Машины
+                    li(class="header__buttons-item")
+                        a(class="btn btn_black")
+                            svg(width="41" height="40" viewBox="0 0 41 40")
+                                use(xlink:href="./imgs/sprites.svg#doors")
+                            span(class="btn-text") Двери

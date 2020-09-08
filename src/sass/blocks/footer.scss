@@ -1,0 +1,142 @@
+.footer {
+  @include bg(url(./imgs/footerbg.jpg));
+  &__container {
+    margin-left: 4.25rem;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4rem;
+  }
+  &__contacts {
+    display: flex;
+    align-items: center;
+  }
+  &__phone,
+  &__mail {
+    display: flex;
+    align-items: center;
+    &-text {
+      font-family: "Gilroy", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1rem;
+      white-space: nowrap;
+      color: #ffffff;
+      margin-left: 1.25rem;
+    }
+  }
+  &__phone {
+    margin-right: 3rem;
+  }
+  &__content {
+    display: flex;
+    margin: 4.8125rem 0 1.875rem;
+    &-inner {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__heading {
+    font-family: "Gilroy", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.375rem;
+    line-height: 115.5%;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    max-width: 32.8125rem;
+  }
+  &__text {
+    font-family: "Gilroy", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.125rem;
+    line-height: 137%;
+    color: #ffffff;
+    margin-bottom: 2.675rem;
+  }
+  &__content-phone {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.375rem;
+    & .footer__phone-text {
+      font-weight: bold;
+    }
+  }
+  &__content-buttons {
+    display: flex;
+  }
+  &__btn-service {
+    max-width: 11.9375rem;
+    text-align: center;
+    font-family: "Oranienbaum", sans-serif;
+    margin-left: 2rem;
+  }
+  &__copyright {
+    font-family: "ptsanscaption", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.75rem;
+    color: #ffffff;
+    margin-top: 2.1875rem;
+  }
+  &__form {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 3.375rem;
+    justify-content: flex-start;
+    &-input {
+      width: 100%;
+      margin-right: 2rem;
+      padding: 0.875rem;
+      background: transparent;
+      border: none;
+      border-bottom: 0.0625rem solid #fff;
+      outline: none;
+      font-family: "Gilroy", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.125rem;
+      line-height: 1.25rem;
+      color: #ffffff;
+    }
+    &-submit {
+      margin-top: 2.125rem;
+      padding: 0.75rem 3rem;
+      color: #427bda;
+      font-family: "Gilroy", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1rem;
+      border-radius: 0.1875rem;
+      background: #fff;
+    }
+  }
+  &__input-wrap {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2.75rem;
+  }
+}
+.address {
+  display: flex;
+  align-items: center;
+  &__text {
+    font-family: "Gilroy", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 146%;
+    color: #ffffff;
+    margin-left: 1.25rem;
+    &-style {
+      font-weight: bold;
+    }
+  }
+}

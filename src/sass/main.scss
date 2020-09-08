@@ -1,4 +1,3 @@
-
 @mixin tablets {
   @media screen and (max-width: 768px) {
     @content;
@@ -9,9 +8,27 @@
     @content;
   }
 }
+@mixin bg($backgroud: url(./imgs/headerbg.jpg)) {
+  background: $backgroud;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
 @font-face {
   font-family: "Gilroy";
   src: url("./fonts/gilroy-regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Oranienbaum";
+  src: url("./fonts/Oranienbaum.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ptsanscaption";
+  src: url("./fonts/ptsanscaption.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -23,5 +40,35 @@
 }
 @import "normalize";
 @import "base";
+.btn {
+  font-family: "Gilroy", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  border-radius: 0.3125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &_black {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.75rem 1.3rem;
+    color: #fff;
+    border: 0.125rem solid #4285F4;
+    & .btn-text {
+      color: inherit;
+      margin-left: 0.75rem;
+    }
+  }
+  &_blue {
+    background: #2f80ed;
+    padding: 0.75rem 2.75rem;
+    color: #fff;
+    & .btn-text {
+      color: inherit;
+      margin-left: 0.75rem;
+    }
+  }
+}
 @import "./blocks/header.scss";
 @import "./blocks/footer.scss";
+@import "./blocks/overlay.scss";
