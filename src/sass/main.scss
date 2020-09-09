@@ -53,7 +53,7 @@
     background: rgba(0, 0, 0, 0.4);
     padding: 0.75rem 1.3rem;
     color: #fff;
-    border: 0.125rem solid #4285F4;
+    border: 0.125rem solid #4285f4;
     & .btn-text {
       color: inherit;
       margin-left: 0.75rem;
@@ -71,4 +71,6 @@
 }
 @import "./blocks/header.scss";
 @import "./blocks/footer.scss";
-@import "./blocks/overlay.scss";
+@import "./blocks/overlay-callback.scss";
+@import "./blocks/how-buy.scss";
+@import "./blocks/shares.scss";

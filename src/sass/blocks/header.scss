@@ -1,5 +1,6 @@
 .header {
   @include bg();
+  margin-bottom: 5.125rem;
   &__container {
     margin-left: 4.25rem;
   }
@@ -111,4 +112,7 @@
 }
 .logo {
   margin-right: 1.5rem;
+}
+.ff{
+  fill: white;
 }

@@ -43,7 +43,13 @@ task("server", () => {
     }
   });
 });
-watch("./src/js/*.js", series("scripts")).on("change", reload);
-watch("./src/pug/**/*.pug", series("html")).on("change", reload);
-watch("./src/sass/**/*.scss", series("styles")).on("change", reload);
-task("default", series(parallel("styles", "scripts", "html"), "server"));
+task("watch", () => {
+  watch("./src/js/*.js", series("scripts")).on("change", reload);
+  watch("./src/pug/**/*.pug", series("html")).on("change", reload);
+  watch("./src/sass/**/*.scss", series("styles")).on("change", reload);
+});
+
+task(
+  "default",
+  series(parallel("styles", "scripts", "html"), parallel("watch", "server"))
+);

@@ -1,0 +1,11 @@
+script(type="template" id="overlayCallbackTemplate")
+    div(class="overlay-callback")
+        div(class="overlay-callback__window")
+            div(class="overlay-callback__form")
+                input(type="text" class="overlay-callback__input" placeholder="Ваш номер телефона")
+                input(type="text" class="overlay-callback__input" placeholder="Ваше имя")
+                button(type="submit" class="btn btn_blue overlay__btn") Заказать звонок
+                div(class="overlay-callback__consent") Нажимая кнопку ”Заказать звонок” вы подтверждаете свое согласие на обработку персональных данных
+            div(class="overlay-callback__close")
+                svg(width="17" height="17" viewBox="0 0 17 17")
+                    use(xlink:href="./imgs/sprites.svg#close")
