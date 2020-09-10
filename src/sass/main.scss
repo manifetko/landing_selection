@@ -38,6 +38,25 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/Gilroy-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/Gilroy-ExtraBold.ttf");
+  font-weight: 800;
+  font-style: normal;
+}
 @import "normalize";
 @import "base";
 .btn {
@@ -74,3 +93,5 @@
 @import "./blocks/overlay-callback.scss";
 @import "./blocks/how-buy.scss";
 @import "./blocks/shares.scss";
+@import "./blocks/analysis.scss";
+@import "./blocks/about.scss";

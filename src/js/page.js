@@ -80,3 +80,4 @@ $(window).scroll(function() {
     }
   });
 });
+// for heading section
