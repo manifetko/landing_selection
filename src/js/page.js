@@ -114,34 +114,29 @@ $(window).scroll(function() {
         );
     }
   });
-  $(".product__bg-text").each((ndx, item) => {
-    target = $(item);
-    targetPos = target.offset().top;
-    scrollToElem = targetPos - winHeight;
-    if (winScrollTop > scrollToElem) {
-      let textValue = parseFloat(
-        $(item)
-          .html()
-          .replace(/\s/g, "")
-          .replace(/,/, ".")
-      );
-      var fraction = 0;
-      if (Number.isInteger(textValue) === false) {
-        fraction = 1;
-      }
-      $(item).animate(
-        { num: textValue - 3 /* - начало */ },
-        {
-          duration: 2000,
-          step: function(num) {
-            this.innerHTML = ((num + 3).toFixed(fraction) + "")
-              .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ")
-              .replace(".", ",");
-          }
-        }
-      );
-    }
-  });
 });
 // for heading section
+$(".product__bg-text").each((ndx, item) => {
+  let textValue = parseFloat(
+    $(item)
+      .html()
+      .replace(/\s/g, "")
+      .replace(/,/, ".")
+  );
+  var fraction = 0;
+  if (Number.isInteger(textValue) === false) {
+    fraction = 1;
+  }
+  $(item).animate(
+    { num: textValue},
+    {
+      duration: 5000,
+      step: function(num) {
+        this.innerHTML = ((num + 3).toFixed(fraction) + "")
+          .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ")
+          .replace(".", ",");
+      }
+    }
+  );
+});
 // values in about product .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g,"$1 ");
