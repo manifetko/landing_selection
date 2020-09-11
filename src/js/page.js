@@ -74,9 +74,19 @@ $(".btn-callback").on("click", e => {
   e.preventDefault();
   createOverlay("callback");
 });
-$(".analysis__link").on("click", e => {
-  e.preventDefault();
-  createOverlay("analysis");
+$(".analysis__link").each((ndx, item) => {
+  $(item).on("click", e => {
+    e.preventDefault();
+    createOverlay("analysis");
+    var analysisNdx = ndx;
+    $(".overlay__label").each((ndx, item) => {
+      if (ndx === analysisNdx) {
+        $(item).css({
+          border: "0.0625rem solid red"
+        });
+      }
+    });
+  });
 });
 // overlay
 var howBuyItem;
@@ -128,7 +138,7 @@ $(".product__bg-text").each((ndx, item) => {
     fraction = 1;
   }
   $(item).animate(
-    { num: textValue},
+    { num: textValue },
     {
       duration: 5000,
       step: function(num) {
