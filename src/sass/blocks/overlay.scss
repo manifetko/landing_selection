@@ -1,0 +1,158 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(229, 229, 229, 0.7);
+  &__window {
+    background: #ffffff;
+    border-radius: 0.1875rem;
+    padding: 2.1875rem 2.9375rem 2.5rem;
+    width: 100%;
+    position: absolute;
+  }
+  &__close {
+    position: absolute;
+    top: -1rem;
+    right: -1.625rem;
+    cursor: pointer;
+  }
+  &__btn {
+    width: 100%;
+    margin: 2.25rem 0 1.875rem;
+    justify-content: center;
+  }
+  &__consent {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 300;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #4f4f4f;
+  }
+  &__input {
+    font-family: "Gilroy", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    outline: none;
+    border: 0.0625rem solid #2f80ed;
+    border-radius: 0.1875rem;
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+  &__input {
+    font-family: "Gilroy", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    outline: none;
+    border: 0.0625rem solid #2f80ed;
+    border-radius: 0.1875rem;
+    margin-bottom: 1.25rem;
+    width: 100%;
+    &-required {
+      font-family: "Gilroy", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.875rem;
+      color: #828282;
+      position: absolute;
+      top: 0.8025rem;
+      left: 1.0625rem;
+      pointer-events: none;
+      &::after {
+        content: "*";
+        color: red;
+        margin-left: 0.5rem;
+      }
+    }
+    &-wrap{
+      position: relative;
+    }
+  }
+  &__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 2.5rem 0;
+  }
+  &__checkbox {
+    display: none;
+    &:checked ~ .overlay__label:before {
+      background: #2f80ed;
+    }
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    height: 2.375rem;
+    width: 6.75rem;
+    background: #c4c4c4;
+    cursor: pointer;
+    &::before {
+      content: "";
+      margin-left: -1rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border: 0.0625rem solid #2f80ed;
+      cursor: pointer;
+      border-radius: 100%;
+    }
+  }
+}
+.overlay-callback {
+  &__window {
+    max-width: 22.625rem;
+  }
+}
+.overlay-analysis {
+  &__heading {
+    font-family: "Gilroy", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.625rem;
+    color: #000000;
+    margin-bottom: 0.625rem;
+  }
+  &__required {
+    font-family: "Gilroy", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.75rem;
+    color: #828282;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    &::before {
+      content: "*";
+      color: red;
+      margin-right: 0.5rem;
+    }
+  }
+  &__window {
+    max-width: 31.375rem;
+    background: url(./imgs/analysis-overlaybg.jpg) right bottom no-repeat no-repeat;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__input {
+    width: 100%;
+    &-wrap {
+      width: 100%;
+    }
+  }
+}

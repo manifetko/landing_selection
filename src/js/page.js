@@ -7,19 +7,44 @@ $(function() {
   });
 });
 // links
-function createOverlay() {
-  var ovarlayTemplate = $("#overlayCallbackTemplate").html();
-  $("body").append(ovarlayTemplate);
-  var overlay = $(".overlay-callback");
-  var overlayWindow = $(".overlay-callback__window");
+function createOverlay(type) {
   var mouseOutside;
-  overlay.fadeOut(0, function() {
-    $("body").css({
-      overflow: "hidden"
+  if (type === "callback") {
+    var overlayTemplate = $("#overlayCallbackTemplate").html();
+  }
+  if (type === "analysis") {
+    var overlayTemplate = $("#overlayAnalysisTemplate").html();
+  }
+  if ($(".overlay")) {
+    $("body").append(overlayTemplate);
+    var overlay = $(".overlay");
+    var overlayWindow = $(".overlay__window");
+    overlay.fadeOut(0, function() {
+      $("body").css({
+        overflow: "hidden"
+      });
+      overlay.fadeIn(1000);
     });
-    overlay.fadeIn(1000);
-  });
-  $(".overlay-callback__close").on("click", () => {
+    $(".overlay__input").each((ndx, item) => {
+      $(item).on("keydown", () => {
+        $(item)
+          .siblings(".overlay__input-required")
+          .css({
+            display: "none"
+          });
+      });
+      $(item).on("keyup", () => {
+        if ($(item).val() === "") {
+          $(item)
+            .siblings(".overlay__input-required")
+            .css({
+              display: "block"
+            });
+        }
+      });
+    });
+  }
+  $(".overlay__close").on("click", () => {
     overlay.fadeOut(500, function() {
       overlay.remove();
       $("body").css({
@@ -47,7 +72,11 @@ function createOverlay() {
 }
 $(".btn-callback").on("click", e => {
   e.preventDefault();
-  createOverlay();
+  createOverlay("callback");
+});
+$(".analysis__link").on("click", e => {
+  e.preventDefault();
+  createOverlay("analysis");
 });
 // overlay
 var howBuyItem;
@@ -65,19 +94,54 @@ $(".how-buy__item").each((ndx, item) => {
 });
 // how-buy section
 $(window).scroll(function() {
-  var winScrollTop = $(this).scrollTop();
+  let winScrollTop = $(this).scrollTop();
+  let winHeight = $(window).height();
+  let target;
+  let targetPos;
+  let scrollToElem;
   $(".container__heading").each((ndx, item) => {
-    var target = $(item);
-    var targetPos = target.offset().top;
-    var winHeight = $(window).height();
-    var scrollToElem = targetPos - winHeight;
+    target = $(item);
+    targetPos = target.offset().top;
+    scrollToElem = targetPos - winHeight;
     if (winScrollTop > scrollToElem) {
       $(item)
         .find(".container__heading-front")
-        .animate({
-          left: "3.625rem"
-        }, 1000);
+        .animate(
+          {
+            left: "3.625rem"
+          },
+          750
+        );
+    }
+  });
+  $(".product__bg-text").each((ndx, item) => {
+    target = $(item);
+    targetPos = target.offset().top;
+    scrollToElem = targetPos - winHeight;
+    if (winScrollTop > scrollToElem) {
+      let textValue = parseFloat(
+        $(item)
+          .html()
+          .replace(/\s/g, "")
+          .replace(/,/, ".")
+      );
+      var fraction = 0;
+      if (Number.isInteger(textValue) === false) {
+        fraction = 1;
+      }
+      $(item).animate(
+        { num: textValue - 3 /* - начало */ },
+        {
+          duration: 2000,
+          step: function(num) {
+            this.innerHTML = ((num + 3).toFixed(fraction) + "")
+              .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ")
+              .replace(".", ",");
+          }
+        }
+      );
     }
   });
 });
 // for heading section
+// values in about product .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g,"$1 ");

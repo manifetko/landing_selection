@@ -67,7 +67,6 @@
   border-radius: 0.3125rem;
   display: flex;
   align-items: center;
-  justify-content: center;
   &_black {
     background: rgba(0, 0, 0, 0.4);
     padding: 0.75rem 1.3rem;
@@ -88,9 +87,10 @@
     }
   }
 }
+
 @import "./blocks/header.scss";
 @import "./blocks/footer.scss";
-@import "./blocks/overlay-callback.scss";
+@import "./blocks/overlay.scss";
 @import "./blocks/how-buy.scss";
 @import "./blocks/shares.scss";
 @import "./blocks/analysis.scss";
