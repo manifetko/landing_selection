@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   background: rgba(229, 229, 229, 0.7);
+  z-index: 100;
   &__window {
     background: #ffffff;
     border-radius: 0.1875rem;
@@ -33,20 +34,6 @@
     line-height: 1rem;
     text-align: center;
     color: #4f4f4f;
-  }
-  &__input {
-    font-family: "Gilroy", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.875rem;
-    line-height: 1rem;
-    padding: 0.75rem 1rem;
-    border: none;
-    outline: none;
-    border: 0.0625rem solid #2f80ed;
-    border-radius: 0.1875rem;
-    margin-bottom: 1.25rem;
-    width: 100%;
   }
   &__input {
     font-family: "Gilroy", sans-serif;

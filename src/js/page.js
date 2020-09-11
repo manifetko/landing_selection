@@ -15,14 +15,15 @@ function createOverlay(type) {
   if (type === "analysis") {
     var overlayTemplate = $("#overlayAnalysisTemplate").html();
   }
+  $("body").append(overlayTemplate);
   if ($(".overlay")) {
     $("body").append(overlayTemplate);
     var overlay = $(".overlay");
     var overlayWindow = $(".overlay__window");
+    overlay.on("scroll", function(e) {
+      e.preventDefault();
+    });
     overlay.fadeOut(0, function() {
-      $("body").css({
-        overflow: "hidden"
-      });
       overlay.fadeIn(1000);
     });
     $(".overlay__input").each((ndx, item) => {
@@ -47,9 +48,6 @@ function createOverlay(type) {
   $(".overlay__close").on("click", () => {
     overlay.fadeOut(500, function() {
       overlay.remove();
-      $("body").css({
-        overflow: "unset"
-      });
     });
   });
   overlayWindow.on("mouseleave", e => {
@@ -64,9 +62,6 @@ function createOverlay(type) {
       overlay.fadeOut(500, function() {
         overlay.remove();
       });
-      $("body").css({
-        overflow: "unset"
-      });
     }
   });
 }
@@ -76,16 +71,22 @@ $(".btn-callback").on("click", e => {
 });
 $(".analysis__link").each((ndx, item) => {
   $(item).on("click", e => {
-    e.preventDefault();
     createOverlay("analysis");
     var analysisNdx = ndx;
+    var hrefAnalysis = $(item).attr("href");
+    $(".overlay__btn").attr("href", `${hrefAnalysis}`);
     $(".overlay__label").each((ndx, item) => {
       if (ndx === analysisNdx) {
         $(item).css({
-          border: "0.0625rem solid red"
+          background: "red"
         });
       }
     });
+    $(".overlay__checkbox").each((ndx, item) => {
+      if (ndx === analysisNdx) {
+        $(item).attr("checked","checked")  
+      }
+    })
   });
 });
 // overlay

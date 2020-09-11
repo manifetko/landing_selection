@@ -1,0 +1,41 @@
+script(type="template" id="overlayCallbackTemplate")
+    div(class="overlay")
+        div(class="overlay__window overlay-callback__window")
+            div(class="overlay__form")
+                input(type="text" class="overlay__input" placeholder="Ваш номер телефона")
+                input(type="text" class="overlay__input" placeholder="Ваше имя")
+                button(type="submit" class="btn btn_blue overlay__btn") Заказать звонок
+                div(class="overlay__consent") Нажимая кнопку ”Заказать звонок” вы подтверждаете свое согласие на обработку персональных данных
+            div(class="overlay__close")
+                svg(width="17" height="17" viewBox="0 0 17 17")
+                    use(xlink:href="./imgs/sprites.svg#close")
+script(type="template" id="overlayAnalysisTemplate")
+    div(class="overlay")
+        div(class="overlay__window overlay-analysis__window")
+            h1(class="overlay-analysis__heading") Онлайн-заявка на анализ
+            div(class="overlay-analysis__required") - обязательное поле
+            div(class="overlay__form")
+                div(class="overlay__input-wrap")
+                    input(type="text" class="overlay__input" required)
+                    span(class="overlay__input-required") Фамилия Имя Отчество
+                div(class="overlay__input-wrap")
+                    input(type="text" class="overlay__input" required)
+                    span(class="overlay__input-required") Ваш номер телефона
+                ul(class="overlay__list")
+                    li(class="overlay__item")
+                        a(target="_blank")
+                            input(class="overlay__checkbox" type="checkbox" id="overlay-checkbox1" checked="unchecked")
+                            label(class="overlay__label" for="overlay-checkbox1")
+                    li(class="overlay__item")
+                        a(target="_blank")
+                            input(class="overlay__checkbox" type="checkbox" id="overlay-checkbox2" checked="unchecked")
+                            label(class="overlay__label" for="overlay-checkbox2")
+                    li(class="overlay__item")
+                        a(target="_blank")
+                            input(class="overlay__checkbox" type="checkbox" id="overlay-checkbox3" checked="unchecked")
+                            label(class="overlay__label" for="overlay-checkbox3")
+                a(type="submit" class="btn btn_blue overlay__btn") Подать онлайн заявку в порт
+                div(class="overlay__consent") Нажимая кнопку ”Заказать звонок” вы подтверждаете свое согласие на обработку персональных данных
+            div(class="overlay__close")
+                svg(width="17" height="17" viewBox="0 0 17 17")
+                    use(xlink:href="./imgs/sprites.svg#close")
