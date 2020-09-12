@@ -64,7 +64,7 @@
         margin-left: 0.5rem;
       }
     }
-    &-wrap{
+    &-wrap {
       position: relative;
     }
   }
@@ -78,6 +78,9 @@
     display: none;
     &:checked ~ .overlay__label:before {
       background: #2f80ed;
+    }
+    &:checked ~ .overlay__label {
+      border: 0.0625rem solid red;
     }
   }
   &__label {

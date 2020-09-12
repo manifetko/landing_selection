@@ -15,16 +15,36 @@ function createOverlay(type) {
   if (type === "analysis") {
     var overlayTemplate = $("#overlayAnalysisTemplate").html();
   }
-  $("body").append(overlayTemplate);
   if ($(".overlay")) {
     $("body").append(overlayTemplate);
     var overlay = $(".overlay");
     var overlayWindow = $(".overlay__window");
-    overlay.on("scroll", function(e) {
-      e.preventDefault();
-    });
     overlay.fadeOut(0, function() {
       overlay.fadeIn(1000);
+    });
+    $(".analysis__link").each((ndx, item) => {
+      var analysisLink = $(item).attr("href");
+      var analysisNdx = ndx;
+      $(".overlay__label").each((ndx, item) => {
+        if (ndx === analysisNdx) {
+          $(item)
+            .parent()
+            .attr("href", `${analysisLink}`);
+        }
+      });
+    });
+    overlay.on("mousewheel", e => {
+      e.preventDefault();
+    });
+    overlay.on("mousedown", e => {
+      if (e.which === 2) {
+        e.preventDefault();
+      }
+    });
+    $(document).on("keydown", e => {
+      if (e.which === 33 || 40 || 38 || 34) {
+        e.preventDefault();
+      }
     });
     $(".overlay__input").each((ndx, item) => {
       $(item).on("keydown", () => {
@@ -48,6 +68,9 @@ function createOverlay(type) {
   $(".overlay__close").on("click", () => {
     overlay.fadeOut(500, function() {
       overlay.remove();
+      $("body").css({
+        overflow: "unset"
+      });
     });
   });
   overlayWindow.on("mouseleave", e => {
@@ -62,6 +85,9 @@ function createOverlay(type) {
       overlay.fadeOut(500, function() {
         overlay.remove();
       });
+      $("body").css({
+        overflow: "unset"
+      });
     }
   });
 }
@@ -71,22 +97,14 @@ $(".btn-callback").on("click", e => {
 });
 $(".analysis__link").each((ndx, item) => {
   $(item).on("click", e => {
+    e.preventDefault();
     createOverlay("analysis");
     var analysisNdx = ndx;
-    var hrefAnalysis = $(item).attr("href");
-    $(".overlay__btn").attr("href", `${hrefAnalysis}`);
     $(".overlay__label").each((ndx, item) => {
       if (ndx === analysisNdx) {
-        $(item).css({
-          background: "red"
-        });
+        $(item).click();
       }
     });
-    $(".overlay__checkbox").each((ndx, item) => {
-      if (ndx === analysisNdx) {
-        $(item).attr("checked","checked")  
-      }
-    })
   });
 });
 // overlay
