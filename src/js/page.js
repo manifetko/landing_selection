@@ -22,17 +22,6 @@ function createOverlay(type) {
     overlay.fadeOut(0, function() {
       overlay.fadeIn(1000);
     });
-    $(".analysis__link").each((ndx, item) => {
-      var analysisLink = $(item).attr("href");
-      var analysisNdx = ndx;
-      $(".overlay__label").each((ndx, item) => {
-        if (ndx === analysisNdx) {
-          $(item)
-            .parent()
-            .attr("href", `${analysisLink}`);
-        }
-      });
-    });
     overlay.on("mousewheel", e => {
       e.preventDefault();
     });
@@ -80,7 +69,6 @@ function createOverlay(type) {
     mouseOutside = false;
   });
   overlay.on("click", e => {
-    e.preventDefault;
     if (mouseOutside === true) {
       overlay.fadeOut(500, function() {
         overlay.remove();
@@ -103,6 +91,18 @@ $(".analysis__link").each((ndx, item) => {
     $(".overlay__label").each((ndx, item) => {
       if (ndx === analysisNdx) {
         $(item).click();
+        $(".analysis__link").each((ndx, item) => {
+          var analysisLink = $(item).attr("href");
+          var analysisNdx = ndx;
+          $(".overlay__label").each((ndx, item) => {
+            if (ndx === analysisNdx) {
+              $(item)
+                .on("click", () => {
+                  window.open(`${analysisLink}`);
+                });
+            }
+          });
+        });
       }
     });
   });
