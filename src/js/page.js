@@ -88,23 +88,22 @@ $(".analysis__link").each((ndx, item) => {
     e.preventDefault();
     createOverlay("analysis");
     var analysisNdx = ndx;
+    var itemHref = $(item).attr("href");
     $(".overlay__label").each((ndx, item) => {
       if (ndx === analysisNdx) {
         $(item).click();
-        $(".analysis__link").each((ndx, item) => {
-          var analysisLink = $(item).attr("href");
-          var analysisNdx = ndx;
-          $(".overlay__label").each((ndx, item) => {
-            if (ndx === analysisNdx) {
-              $(item)
-                .on("click", () => {
-                  window.open(`${analysisLink}`);
-                });
-            }
-          });
-        });
       }
+      $(item).on("click", () => {
+        analysisNdx = ndx;
+        $(".analysis__link").each((ndx, item) => {
+          if (ndx === analysisNdx) {
+            itemHref = $(item).attr("href");
+            $(".overlay__btn").attr("href", itemHref);
+          }
+        });
+      });
     });
+    $(".overlay__btn").attr("href", itemHref);
   });
 });
 // overlay
@@ -146,6 +145,9 @@ $(window).scroll(function() {
 });
 // for heading section
 $(".product__bg-text").each((ndx, item) => {
+  $(item).css({
+    width: `${$(item).width() + 13}px`
+  });
   let textValue = parseFloat(
     $(item)
       .html()
@@ -160,10 +162,16 @@ $(".product__bg-text").each((ndx, item) => {
     { num: textValue },
     {
       duration: 5000,
+      easing: "linear",
       step: function(num) {
         this.innerHTML = ((num + 3).toFixed(fraction) + "")
           .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ")
           .replace(".", ",");
+      },
+      complete: function() {
+        $(item).css({
+          width: `auto`
+        });
       }
     }
   );

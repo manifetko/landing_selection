@@ -74,7 +74,7 @@
     justify-content: space-between;
     margin: 2.5rem 0;
   }
-  &__checkbox {
+  &__radio {
     display: none;
     &:checked ~ .overlay__label:before {
       background: #2f80ed;

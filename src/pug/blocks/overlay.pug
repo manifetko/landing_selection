@@ -23,15 +23,15 @@ script(type="template" id="overlayAnalysisTemplate")
                     span(class="overlay__input-required") Ваш номер телефона
                 ul(class="overlay__list")
                     li(class="overlay__item")
-                        input(class="overlay__checkbox" type="checkbox" id="overlay-checkbox1")
-                        label(class="overlay__label" for="overlay-checkbox1")
+                        input(class="overlay__radio" type="radio" name="overlay-radio" id="overlay-radio1")
+                        label(class="overlay__label" for="overlay-radio1")
                     li(class="overlay__item")
-                        input(class="overlay__checkbox" type="checkbox" id="overlay-checkbox2")
-                        label(class="overlay__label" for="overlay-checkbox2")
+                        input(class="overlay__radio" type="radio" name="overlay-radio" id="overlay-radio2")
+                        label(class="overlay__label" for="overlay-radio2")
                     li(class="overlay__item")
-                        input(class="overlay__checkbox" type="checkbox" id="overlay-checkbox3")
-                        label(class="overlay__label" for="overlay-checkbox3")
-                a(type="submit" class="btn btn_blue overlay__btn") Подать онлайн заявку в порт
+                        input(class="overlay__radio" type="radio" name="overlay-radio" id="overlay-radio3")
+                        label(class="overlay__label" for="overlay-radio3")
+                a(href="" type="submit" class="btn btn_blue overlay__btn") Подать онлайн заявку в порт
                 div(class="overlay__consent") Нажимая кнопку ”Заказать звонок” вы подтверждаете свое согласие на обработку персональных данных
             div(class="overlay__close")
                 svg(width="17" height="17" viewBox="0 0 17 17")
