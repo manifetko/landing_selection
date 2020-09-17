@@ -5,6 +5,9 @@
   align-items: center;
   margin-bottom: 7.3125rem;
   width: 100%;
+  @include phones{
+    margin: 2rem 0;
+  }
   &__wrap {
     display: flex;
     max-width: 1140px;
@@ -20,14 +23,24 @@
     border: 0.125rem solid #4285f4;
     padding: 1.875rem;
     border-radius: 0.1875rem;
+    @include phones {
+      border: 0;
+      padding: 0;
+    }
     &-wrap {
       width: 47.5%;
+      @include phones {
+        width: 100%;
+      }
     }
   }
   &__img {
     width: 47.5%;
     border-radius: 0.1875rem;
     margin-right: 1rem;
+    @include phones {
+      display: none;
+    }
   }
   &__list {
     display: flex;
@@ -51,6 +64,12 @@
     margin-right: 1rem;
     cursor: pointer;
     margin-bottom: 1.875rem;
+    @include phones {
+      width: 45%;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 0.75rem 0.625rem;
+    }
     &-text {
       font-family: "Gilroy", sans-serif;
       font-style: normal;
@@ -60,12 +79,23 @@
       color: #000000;
       margin-top: 1.25rem;
       max-width: 8rem;
+      @include phones {
+        max-width: none;
+        margin: 0 0 0 0.5rem;
+        text-align: start;
+        font-weight: normal;
+        font-size: 0.75rem;
+      }
       .active & {
         color: #fff;
       }
     }
     &-img {
       fill: #4285f4;
+      @include phones {
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+      }
       .active & {
         fill: #fff;
       }
@@ -73,6 +103,10 @@
     &-easy {
       fill: none;
       stroke: #4285f4;
+      @include phones {
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+      }
       .active & {
         fill: none;
         stroke: #fff;
@@ -122,9 +156,9 @@
       }
     }
   }
-  &__btn{
-   display: flex;
-   justify-content: center;
+  &__btn {
+    display: flex;
+    justify-content: center;
   }
   &__subitem {
     font-family: "Gilroy", sans-serif;

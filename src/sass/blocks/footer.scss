@@ -1,22 +1,45 @@
 .footer {
   @include bg(url(./imgs/footerbg.jpg));
+  @include phones {
+    padding: 2.625rem 2.75rem;
+    background: url(./imgs/footermobilebg.png) #333333 right bottom no-repeat no-repeat;
+  }
   &__container {
     margin-left: 4.25rem;
+    margin: 0 auto 0 auto;
+    max-width: 1152px;
   }
   &__row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 4rem;
+    @include phones {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+    }
+    & .logo {
+      @include phones {
+        display: none;
+      }
+    }
   }
   &__contacts {
     display: flex;
     align-items: center;
+    @include phones {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
   &__phone,
   &__mail {
     display: flex;
     align-items: center;
+    @include phones {
+      margin-top: 1rem;
+    }
     &-text {
       font-family: "Gilroy", sans-serif;
       font-style: normal;
@@ -33,6 +56,9 @@
   &__content {
     display: flex;
     margin: 4.8125rem 0 1.875rem;
+    @include phones {
+      flex-direction: column;
+    }
     &-inner {
       flex: 1 1 auto;
       display: flex;
@@ -49,6 +75,9 @@
     color: #ffffff;
     margin-bottom: 2rem;
     max-width: 32.8125rem;
+    @include phones {
+      font-size: 2rem;
+    }
   }
   &__text {
     font-family: "Gilroy", sans-serif;
@@ -58,11 +87,17 @@
     line-height: 137%;
     color: #ffffff;
     margin-bottom: 2.675rem;
+    @include phones {
+      font-size: 0.875rem;
+    }
   }
   &__content-phone {
     display: flex;
     align-items: center;
     margin-bottom: 3.375rem;
+    @include phones {
+      display: none;
+    }
     & .footer__phone-text {
       font-weight: bold;
     }
@@ -76,6 +111,10 @@
     text-align: center;
     font-family: "Oranienbaum", sans-serif;
     margin-left: 2rem;
+    @include phones {
+      font-family: Gilroy, sans-serif;
+      font-size: 0.625rem;
+    }
   }
   &__copyright {
     font-family: "ptsanscaption", sans-serif;
@@ -92,6 +131,9 @@
     align-items: flex-end;
     padding-top: 3.375rem;
     justify-content: flex-start;
+    @include phones {
+      padding: 0;
+    }
     &-input {
       width: 100%;
       margin-right: 2rem;
@@ -106,6 +148,10 @@
       font-size: 1.125rem;
       line-height: 1.25rem;
       color: #ffffff;
+      @include phones {
+        margin: 0 0 1.25rem 0;
+        width: 100%;
+      }
     }
     &-submit {
       margin-top: 2.125rem;
@@ -117,12 +163,22 @@
       font-size: 1rem;
       border-radius: 0.1875rem;
       background: #fff;
+      margin-right: 2rem;
+      @include phones {
+        margin: 2rem 0 0 0;
+        width: 100%;
+      }
     }
   }
   &__input-wrap {
     display: flex;
     width: 100%;
     margin-bottom: 2.75rem;
+    @include phones {
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+    }
   }
 }
 .address {

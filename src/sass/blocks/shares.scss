@@ -4,6 +4,10 @@
   align-items: center;
   padding: 3rem 6rem 3rem 4rem;
   @include bg(url(./imgs/sharesbg.jpg));
+  @include phones {
+    flex-direction: column;
+    padding: 2.75rem 1.5rem;
+  }
   &__heading {
     max-width: 14rem;
     font-family: "Gilroy";
@@ -12,10 +16,34 @@
     font-size: 1.5rem;
     line-height: 137%;
     color: #ffffff;
+    @include phones {
+      font-size: 1rem;
+      max-width: 8.875rem;
+    }
   }
   &__form {
     display: flex;
     align-items: center;
+    @include phones{
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  &__btn{
+    @include phones{
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    @include phones {
+      width: 100%;
+      margin-bottom: 2.375rem;
+    }
   }
   &__input {
     padding: 0.75rem 1.125rem;
@@ -30,5 +58,10 @@
     border: none;
     margin-right: 1.875rem;
     min-width: 16rem;
+    @include phones{
+      min-width: auto;
+      margin: 0 0 1.875rem 0;
+      width: 100%;
+    }
   }
 }

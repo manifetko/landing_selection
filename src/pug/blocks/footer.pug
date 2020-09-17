@@ -1,5 +1,4 @@
 footer(class="footer")
-    div(class="container")
         div(class="footer__container")
             div(class="footer__row")
                 a(class="logo" href="./index.html")
@@ -30,13 +29,6 @@ footer(class="footer")
                         svg(width="23" height="24" viewBox="0 0 23 24")
                             use(xlink:href="./imgs/sprites.svg#phone-white")
                         span(class="footer__phone-text") 8 800-000-00-00
-                    div(class="footer__content-buttons")
-                        a(class="btn btn_black") 
-                            svg(width="23" height="23" viewBox="0 0 23 23")
-                                use(xlink:href="./imgs/sprites.svg#document")
-                            span(class="btn-text") Документация
-                        a(class="btn btn_black footer__btn-service") Служба финансово  надзора Республики Адыг
-                    div(class="footer__copyright") Микрорайон «Малинина душа» Застройщик ООО «СУК» Генеральный подрядчик ООО «ГК «Серегарад»»
                 form(class="footer__form")
                     div(class="footer__input-wrap")
                         input(type="text" class="footer__form-input" value="Ваше имя")
@@ -44,3 +36,10 @@ footer(class="footer")
                         input(type="email" class="footer__form-input" value="E-mail")
                         input(type="tel" class="footer__form-input" value="Телефон")
                     button(type="submit" class="footer__form-submit") Заказать звонок
+            div(class="footer__content-buttons")
+                        a(class="btn btn_black") 
+                            svg(width="23" height="23" viewBox="0 0 23 23")
+                                use(xlink:href="./imgs/sprites.svg#document")
+                            span(class="btn-text") Документация
+                        a(class="btn btn_black footer__btn-service") Служба финансово  надзора Республики Адыг
+            div(class="footer__copyright") Микрорайон «Малинина душа» Застройщик ООО «СУК» Генеральный подрядчик ООО «ГК «Серегарад»»

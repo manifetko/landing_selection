@@ -9,18 +9,33 @@
   align-items: center;
   background: rgba(229, 229, 229, 0.7);
   z-index: 100;
+  overflow-y: overlay;
   &__window {
     background: #ffffff;
     border-radius: 0.1875rem;
     padding: 2.1875rem 2.9375rem 2.5rem;
-    width: 100%;
+    width: 95%;
+    max-height: 100%;
     position: absolute;
+    @include phones {overflow-y: overlay;
+      padding: 2.1875rem 1.9375rem 2.5rem;
+    }
   }
   &__close {
     position: absolute;
     top: -1rem;
     right: -1.625rem;
     cursor: pointer;
+    &-icon {
+      fill: #fff;
+    }
+    @include phones {
+      top: 0.5rem;
+      right: 0.5rem;
+      &-icon {
+        fill: rgb(229, 229, 229);
+      }
+    }
   }
   &__btn {
     width: 100%;
@@ -73,6 +88,10 @@
     width: 100%;
     justify-content: space-between;
     margin: 2.5rem 0;
+    @include phones {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
   }
   &__radio {
     display: none;
@@ -90,6 +109,10 @@
     width: 6.75rem;
     background: #c4c4c4;
     cursor: pointer;
+    @include phones {
+      margin-right: 1.5rem;
+      margin-bottom: 2rem;
+    }
     &::before {
       content: "";
       margin-left: -1rem;
@@ -132,7 +155,7 @@
   }
   &__window {
     max-width: 31.375rem;
-    background: url(./imgs/analysis-overlaybg.jpg) right bottom no-repeat no-repeat;
+    background: url(./imgs/analysis-overlaybg.jpg) #fff right bottom no-repeat no-repeat;
   }
   &__form {
     display: flex;

@@ -21,19 +21,9 @@ function createOverlay(type) {
     var overlayWindow = $(".overlay__window");
     overlay.fadeOut(0, function() {
       overlay.fadeIn(1000);
-    });
-    overlay.on("mousewheel", e => {
-      e.preventDefault();
-    });
-    overlay.on("mousedown", e => {
-      if (e.which === 2) {
-        e.preventDefault();
-      }
-    });
-    $(document).on("keydown", e => {
-      if (e.which === 33 || 40 || 38 || 34) {
-        e.preventDefault();
-      }
+      $("body").css({
+        overflow: "hidden"
+      });
     });
     $(".overlay__input").each((ndx, item) => {
       $(item).on("keydown", () => {
@@ -62,19 +52,21 @@ function createOverlay(type) {
       });
     });
   });
-  overlayWindow.on("mouseleave", e => {
+  overlayWindow.on("mouseleave touchleave", e => {
+    e.preventDefault();
     mouseOutside = true;
   });
-  overlayWindow.on("mouseenter", e => {
+  overlayWindow.on("mouseenter touchenter", e => {
+    e.preventDefault();
     mouseOutside = false;
   });
   overlay.on("click", e => {
     if (mouseOutside === true) {
       overlay.fadeOut(500, function() {
         overlay.remove();
-      });
-      $("body").css({
-        overflow: "unset"
+        $("body").css({
+          overflow: "unset"
+        });
       });
     }
   });
@@ -136,7 +128,7 @@ $(window).scroll(function() {
         .find(".container__heading-front")
         .animate(
           {
-            left: "3.625rem"
+            left: "6%"
           },
           750
         );
@@ -177,3 +169,19 @@ $(".product__bg-text").each((ndx, item) => {
   );
 });
 // values in about product .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g,"$1 ");
+const nav = $(".nav");
+$(".header__humburger").on("click", () => {
+  if (nav.hasClass("menu")) {
+    nav.removeClass("menu");
+    nav.fadeOut(300);
+    $("body").css({
+      overflow: "unset"
+    });
+  } else {
+    nav.addClass("menu");
+    nav.fadeIn(300);
+    $("body").css({
+      overflow: "hidden"
+    });
+  }
+});
