@@ -22,7 +22,8 @@ function createOverlay(type) {
     overlay.fadeOut(0, function() {
       overlay.fadeIn(1000);
       $("body").css({
-        overflow: "hidden"
+        overflow: "hidden",
+        padding: "0 calc(20px - (100vw - 100%)) 0 0"
       });
     });
     $(".overlay__input").each((ndx, item) => {
@@ -48,7 +49,8 @@ function createOverlay(type) {
     overlay.fadeOut(500, function() {
       overlay.remove();
       $("body").css({
-        overflow: "unset"
+        overflow: "unset",
+        padding: "0"
       });
     });
   });
@@ -65,7 +67,8 @@ function createOverlay(type) {
       overlay.fadeOut(500, function() {
         overlay.remove();
         $("body").css({
-          overflow: "unset"
+          overflow: "unset",
+          padding: "0"
         });
       });
     }
@@ -138,7 +141,7 @@ $(window).scroll(function() {
 // for heading section
 $(".product__bg-text").each((ndx, item) => {
   $(item).css({
-    width: `${$(item).width() + 13}px`
+    width: `${$(item).width() + 17}px`
   });
   let textValue = parseFloat(
     $(item)

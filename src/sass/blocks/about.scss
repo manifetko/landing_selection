@@ -9,7 +9,7 @@
     position: relative;
     &-header {
       position: absolute;
-      top: 0;
+      top: -1.25rem;
       width: 100%;
       display: flex;
       justify-content: space-around;
@@ -57,13 +57,29 @@
       flex-wrap: wrap;
       align-items: center;
       margin-bottom: 1.5rem;
+      padding:0 1.25rem;
     }
   }
   &__item {
     display: flex;
     align-items: center;
+    &:nth-child(1) .product__item-icon{
+      fill:#2D9CDB;
+      @include phones{
+        fill:#333;
+      }
+        }&:nth-child(2) .product__item-icon{
+          stroke:#F2994A;fill:none;@include phones{
+            stroke:#333;
+          }
+            }&:nth-child(3) .product__item-icon{
+              fill:#9B51E0;
+              @include phones{
+                fill:#333;
+              }
+                }
     @include phones {
-      width: 40%;
+      flex: 1 1 auto;
       margin-bottom: 2rem;
     }
     &-icon{
@@ -92,6 +108,7 @@
       @include phones {
         font-size: 1rem;
         font-weight: bold;
+        margin: 0;
       }
     }
     &-bold {
