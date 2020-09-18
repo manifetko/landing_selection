@@ -23,7 +23,8 @@ function createOverlay(type) {
       overlay.fadeIn(1000);
       $("body").css({
         overflow: "hidden",
-        padding: "0 calc(20px - (100vw - 100%)) 0 0"
+        position: "fixed",
+        width: "100%"
       });
     });
     $(".overlay__input").each((ndx, item) => {
@@ -50,15 +51,20 @@ function createOverlay(type) {
       overlay.remove();
       $("body").css({
         overflow: "unset",
-        padding: "0"
+        position: "relative",
+        width: "auto"
       });
     });
+  });
+  overlay.on("touchstart", e => {
+    e.preventDefault();
+    mouseOutside = true;
   });
   overlayWindow.on("mouseleave touchleave", e => {
     e.preventDefault();
     mouseOutside = true;
   });
-  overlayWindow.on("mouseenter touchenter", e => {
+  overlayWindow.on("mouseenter touchenter touchstart", e => {
     e.preventDefault();
     mouseOutside = false;
   });
@@ -68,7 +74,8 @@ function createOverlay(type) {
         overlay.remove();
         $("body").css({
           overflow: "unset",
-          padding: "0"
+          position: "relative",
+          width: "auto"
         });
       });
     }
