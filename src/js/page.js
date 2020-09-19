@@ -46,26 +46,10 @@ function createOverlay(type) {
       });
     });
   }
-  $(".overlay__close").on("click", () => {
-    overlay.fadeOut(500, function() {
-      overlay.remove();
-      $("body").css({
-        overflow: "unset",
-        position: "relative",
-        width: "auto"
-      });
-    });
-  });
-  overlay.on("touchstart", e => {
-    e.preventDefault();
+  overlayWindow.on("mouseleave", e => {
     mouseOutside = true;
   });
-  overlayWindow.on("mouseleave touchleave", e => {
-    e.preventDefault();
-    mouseOutside = true;
-  });
-  overlayWindow.on("mouseenter touchenter touchstart", e => {
-    e.preventDefault();
+  overlayWindow.on("mouseenter", e => {
     mouseOutside = false;
   });
   overlay.on("click", e => {
@@ -79,6 +63,16 @@ function createOverlay(type) {
         });
       });
     }
+  });
+  $(".overlay__close").on("click", () => {
+    overlay.fadeOut(500, function() {
+      overlay.remove();
+      $("body").css({
+        overflow: "unset",
+        position: "relative",
+        width: "auto"
+      });
+    });
   });
 }
 $(".btn-callback").on("click", e => {
