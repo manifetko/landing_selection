@@ -1,6 +1,7 @@
 .header {
   @include bg();
   margin-bottom: 5.125rem;
+  padding: 0 0 0 calc(50% - 650px);
   @include phones {
     @include bg(url(./imgs/headermobilebg.jpg));
   }
@@ -8,7 +9,6 @@
     max-width: 1232px;
     width: 100%;
     margin: 0 auto 3rem auto;
-    margin: 0 calc(50% - 650px) 3rem auto;
     @include phones {
       margin: 0 auto;
     }
@@ -39,11 +39,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6.125rem;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto 6.125rem auto;
+    @include tablets{
+      flex-direction: column;
+    }
     @include phones {
       background: #4d4d4d;
       padding: 1rem 1.5rem;
+      flex-direction: row;
+      width: 100%;
       margin-bottom: 6.125rem;
     }
   }
@@ -63,27 +68,27 @@
   }
   &__content {
     display: flex;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto 7rem auto;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 7rem;
-    @include phones {
+    @include tablets {
       flex-direction: column;
       align-items: center;
-      margin: 0;
+      margin: 0 auto;
     }
     &-inner {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      @include phones {
+      @include tablets {
         align-items: center;
       }
     }
     &-btns {
       display: flex;
       justify-content: space-between;
-      @include phones {
+      @include tablets {
         flex-direction: column;
         margin-bottom: 2.25rem;
       }
@@ -112,9 +117,11 @@
     align-items: center;
     background: #fff;
     margin-right: 3.125rem;
-    @include phones {
-      padding: 0.75rem 1.5rem;
+    @include tablets {
       margin: 0 0 1.75rem 0;
+    }
+    @include phones{
+      padding: 0.75rem 1.5rem;
     }
     & .btn-text {
       margin-left: 0.875rem;
@@ -163,6 +170,10 @@
 .nav {
   display: flex;
   margin-right: 1.5rem;
+  @include tablets{
+    margin: 2rem 0;
+    padding: 0 2rem;
+  }
   @include phones {
     display: none;
     position: fixed;
@@ -178,6 +189,9 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    @include tablets {
+      justify-content: center;
+    }
     @include phones {
       flex-direction: column;
       height: 100%;

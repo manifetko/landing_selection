@@ -14,10 +14,17 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 4rem;
+    @include tablets {
+      flex-wrap: wrap;
+      width: 95%;
+      margin: 0 auto;
+    }
     @include phones {
       flex-direction: column;
       align-items: flex-start;
+      justify-content: start;
       padding: 0;
+      margin: 0;
     }
     & .logo {
       @include phones {
@@ -28,9 +35,16 @@
   &__contacts {
     display: flex;
     align-items: center;
+    @include tablets {
+      width: 100%;
+      margin-top: 1.5rem;
+      justify-content: space-between;
+    }
     @include phones {
       flex-direction: column;
       align-items: flex-start;
+      margin: 0;
+      width: auto;
     }
   }
   &__phone,
@@ -56,8 +70,13 @@
   &__content {
     display: flex;
     margin: 4.8125rem 0 1.875rem;
-    @include phones {
+    @include tablets {
       flex-direction: column;
+      width: 95%;
+      margin: 4.8125rem auto 1.875rem auto;
+    }
+    @include phones {
+      width: 100%;
     }
     &-inner {
       flex: 1 1 auto;
@@ -105,6 +124,15 @@
   &__content-buttons {
     display: flex;
     align-items: center;
+    @include tablets {
+      width: 95%;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+    @include phones {
+      width: auto;
+      margin: auto;
+    }
   }
   &__btn-service {
     max-width: 11.9375rem;
@@ -114,7 +142,7 @@
     @include phones {
       font-family: Gilroy, sans-serif;
       font-size: 0.625rem;
-      padding: 0.5rem .2rem;
+      padding: 0.5rem 0.2rem;
     }
   }
   &__copyright {
@@ -124,6 +152,13 @@
     font-size: 0.75rem;
     color: #ffffff;
     margin-top: 2.1875rem;
+    @include tablets {
+      width: 95%;
+      margin: 2.1875rem auto;
+    }
+    @include phones {
+      width: auto;
+    }
   }
   &__form {
     flex: 1 1 auto;
