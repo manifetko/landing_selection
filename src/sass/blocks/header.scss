@@ -43,6 +43,7 @@
     margin: 0 auto 6.125rem auto;
     @include tablets{
       flex-direction: column;
+      margin-bottom: 3rem;
     }
     @include phones {
       background: #4d4d4d;
@@ -68,11 +69,12 @@
   }
   &__content {
     display: flex;
-    width: 95%;
+    width: 100%;
     margin: 0 auto 7rem auto;
     align-items: flex-end;
     justify-content: space-between;
     @include tablets {
+      width: 95%;
       flex-direction: column;
       align-items: center;
       margin: 0 auto;
