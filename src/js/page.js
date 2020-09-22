@@ -21,11 +21,6 @@ function createOverlay(type) {
     var overlayWindow = $(".overlay__window");
     overlay.fadeOut(0, function() {
       overlay.fadeIn(1000);
-      $("body").css({
-        overflow: "hidden",
-        position: "fixed",
-        width: "100%"
-      });
     });
     $(".overlay__input").each((ndx, item) => {
       $(item).on("keydown", () => {
@@ -56,22 +51,12 @@ function createOverlay(type) {
     if (mouseOutside === true) {
       overlay.fadeOut(500, function() {
         overlay.remove();
-        $("body").css({
-          overflow: "unset",
-          position: "relative",
-          width: "auto"
-        });
       });
     }
   });
   $(".overlay__close").on("click", () => {
     overlay.fadeOut(500, function() {
       overlay.remove();
-      $("body").css({
-        overflow: "unset",
-        position: "relative",
-        width: "auto"
-      });
     });
   });
 }

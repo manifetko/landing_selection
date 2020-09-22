@@ -1,14 +1,14 @@
 .header {
   @include bg();
   margin-bottom: 5.125rem;
-  padding: 0 0 0 calc(50% - 650px);
+  padding: 0 calc(50% - 650px) 0 calc(50% - 616px);
   @include phones {
     @include bg(url(./imgs/headermobilebg.jpg));
   }
   &__container {
     max-width: 1232px;
-    width: 100%;
-    margin: 0 auto 3rem auto;
+    width: 95%;
+    margin: 0 0 3rem auto;
     @include phones {
       margin: 0 auto;
     }
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 100%;
     margin: 0 auto 6.125rem auto;
     @include tablets{
       flex-direction: column;
