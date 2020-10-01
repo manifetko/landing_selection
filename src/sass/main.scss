@@ -27,24 +27,17 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "ptsanscaption";
-  src: url("./fonts/ptsanscaption.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: "Gilroy";
   src: url("./fonts/gilroy-bold.ttf");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("./fonts/Montserrat-Regular.otf");
-  font-weight: normal;
+  font-family: "Gilroy";
+  src: url("./fonts/gilroy-heavy.ttf");
+  font-weight: 900;
   font-style: normal;
 }
-
 @font-face {
   font-family: "Gilroy";
   src: url("./fonts/Gilroy-Medium.ttf");
@@ -106,8 +99,4 @@
 
 @import "./blocks/header.scss";
 @import "./blocks/footer.scss";
-@import "./blocks/overlay.scss";
-@import "./blocks/how-buy.scss";
-@import "./blocks/shares.scss";
-@import "./blocks/analysis.scss";
-@import "./blocks/about.scss";
+@import "./terms.scss";
