@@ -22,6 +22,7 @@ $(".header__humburger").on("click", () => {
     });
   }
 });
+//
 var sliderItems = $(".slider__item");
 var sliderList = $(".slider__list");
 var sliderWidth = sliderList.width();
@@ -31,6 +32,8 @@ $(window).resize(function() {
 var sliderBreadcrumbs = $(".slider__breadcrumbs-item");
 var currentDisplacement = 0;
 var idIntervals = 0;
+var sliderRight = $(".slider__right");
+var sliderLeft = $(".slider__left");
 sliderList.append(
   sliderList
     .children()
@@ -70,3 +73,30 @@ function moveSlide(slidesToMove) {
 idIntervals = setInterval(function() {
   moveSlide(currentDisplacement + 1);
 }, 5000);
+sliderRight.on("click", () => {
+  clearInterval(idIntervals);
+  idIntervals = setInterval(function() {
+    moveSlide(currentDisplacement + 1);
+  }, 5000);
+  moveSlide(currentDisplacement + 1);
+});
+sliderLeft.on("click", () => {
+  clearInterval(idIntervals);
+  idIntervals = setInterval(function() {
+    moveSlide(currentDisplacement + 1);
+  }, 5000);
+  moveSlide(currentDisplacement - 1);
+});
+// slider
+const playerVideo = $(".player__video").get(0);
+const player = $(".player");
+const playerStart = $(".player__start");
+player.on("click", () => {
+  if (playerVideo.paused) {
+    playerVideo.play();
+    playerStart.addClass("disable");
+  } else {
+    playerStart.removeClass("disable");
+    playerVideo.pause();
+  }
+});

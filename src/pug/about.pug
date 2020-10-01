@@ -1,0 +1,125 @@
+doctype html
+html(lang="en")
+    head
+        title Home
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        link(href="./styles.min.css" type="text/css" rel="stylesheet")
+    body
+        div(class="wrapper")
+            include ./blocks/header.pug
+            div(class="container")
+                div(class="about")
+                    div(class="about__heading")
+                        h1(class="about__heading-front") Живой пример
+                        h1(class="about__heading-bg") Живой пример
+                        div(class="about__heading-text") флагманский продукт экстра-классас созданием обычной топовой страны.
+                    div(class="player") 
+                        video(class="player__video" src="./media/player.mp4" width="100%" height="100%")
+                        div(class="player__start")
+                            svg(class="player__start-icon" width="57" height="64" viewBox="0 0 57 64") 
+                                use(xlink:href="./imgs/sprites.svg#player-start")
+                    div(class="features")
+                        ul(class="features__sublist")
+                            li(class="features__subitem")
+                                svg(width="27" height="28" viewBox="0 0 27 28") 
+                                    use(xlink:href="./imgs/sprites.svg#area")
+                                div(class="features__subitem-wrap") 
+                                    span(class="features__subitem-heading") Площадь
+                                    div(class="features__text") 11,1 га
+                            li(class="features__subitem")
+                                svg(width="27" height="28" viewBox="0 0 27 28") 
+                                    use(xlink:href="./imgs/sprites.svg#stages")
+                                div(class="features__subitem-wrap") 
+                                    span(class="features__subitem-heading") Этапы
+                                    div(class="features__text") от <span class="features__text-style">9</span> до <span class="features__text-style">18</span>
+                            li(class="features__subitem")
+                                svg(width="28" height="34" viewBox="0 0 28 34") 
+                                    use(xlink:href="./imgs/sprites.svg#compilation")
+                                div(class="features__subitem-wrap") 
+                                    span(class="features__subitem-heading") Подборка
+                                    div(class="features__text") более <span class="features__text-style">8 000</span> продукт 
+                            li(class="features__subitem")
+                                svg(width="33" height="28" viewBox="0 0 33 28") 
+                                    use(xlink:href="./imgs/sprites.svg#horse")
+                                div(class="features__subitem-wrap") 
+                                    span(class="features__subitem-heading") 4 Детских тапка
+                                    div(class="features__text") на <span class="features__text-style">940</span> людей
+                            li(class="features__subitem")
+                                svg(width="27" height="28" viewBox="0 0 27 28") 
+                                    use(xlink:href="./imgs/sprites.svg#books")
+                                div(class="features__subitem-wrap") 
+                                    span(class="features__subitem-heading") Книги
+                                    div(class="features__text") на <span class="features__text-style">1 100</span> гбайт
+                            li(class="features__subitem")
+                                svg(width="28" height="28" viewBox="0 0 28 28") 
+                                    use(xlink:href="./imgs/sprites.svg#parking")
+                                div(class="features__subitem-wrap") 
+                                    span(class="features__subitem-heading") Стоянка
+                                    div(class="features__text") <span class="features__text-style">1 100</span> мест
+                        ul(class="features__list")
+                            li(class="features__item")
+                                svg(class="features__item-icon" width="33" height="33" viewBox="0 0 33 33") 
+                                    use(xlink:href="./imgs/sprites.svg#skyscrapper")
+                                div(class="features__text") Адъюнкт Водоносный Конец Обездолить
+                            li(class="features__item")
+                                svg(class="features__item-icon" width="32" height="32" viewBox="0 0 32 32") 
+                                    use(xlink:href="./imgs/sprites.svg#bus")
+                                div(class="features__text") 3 приостановки социального автотранспорта во каждое направленность мегаполиса
+                            li(class="features__item")
+                                svg(class="features__item-icon" width="32" height="32" viewBox="0 0 32 32") 
+                                    use(xlink:href="./imgs/sprites.svg#coffee-shop")
+                                div(class="features__text") Адъюнкт Водоносный Конец Обездолить Оборудовать Отдоить Предание Разрисовать Устыдить Шарнир
+                            li(class="features__item")
+                                svg(class="features__item-icon" width="32" height="32" viewBox="0 0 32 32") 
+                                    use(xlink:href="./imgs/sprites.svg#cctv")
+                                div(class="features__text") контроль доступа, видеонаблюдение
+                            li(class="features__item")
+                                svg(class="features__item-icon" width="32" height="32" viewBox="0 0 32 32") 
+                                    use(xlink:href="./imgs/sprites.svg#sadik")
+                                div(class="features__text") младенческие площадки, уличные тренажеры, область с целью микроскопический футбола, баскетбольные площадки, прогульный аллея, роллердром, амфитеатр
+                            li(class="features__item")
+                                svg(class="features__item-icon" width="32" height="32" viewBox="0 0 32 32") 
+                                    use(xlink:href="./imgs/sprites.svg#shop-bag")
+                                div(class="features__text") во шаговой доступности наиболее Тысячи торговых центров, 
+                            li(class="features__item")
+                                svg(class="features__item-icon" width="30" height="32" viewBox="0 0 30 32") 
+                                    use(xlink:href="./imgs/sprites.svg#hospital")
+                                div(class="features__text") конторский орган, отдел банк, мед обслуживание, автосалон красы, мебельный торговый центр, торговые центры строительных.
+                    ul(class="about__list")
+                        li(class="about__item")
+                            div(class="about__item-wrap")
+                                div(class="about__heading")
+                                    h1(class="about__heading-front") Блок1
+                                    h1(class="about__heading-bg") Блок1 Блок1 Блок1
+                                div(class="about__text") Таким образом, социально-экономическое развитие способствует повышению актуальности позиций, занимаемых участниками в отношении поставленных задач? С другой стороны рамки и место обучения кадров требует от нас системного анализа системы.
+                                ul(class="about__sublist")
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                            div(class="about__slider")
+                                div(class="slider")
+                                    ul(class="slider__breadcrumbs")
+                                        li(class="slider__breadcrumbs-item active")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                    ul(class="slider__list")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                    button(class="slider__right")
+                                        svg(width="32" height="32" viewBox="0 0 32 32") 
+                                            use(xlink:href="./imgs/sprites.svg#slider-right")
+                                    button(class="slider__left") 
+                                        svg(width="32" height="32" viewBox="0 0 32 32") 
+                                            use(xlink:href="./imgs/sprites.svg#slider-left")
+            include ./blocks/footer.pug
+        script(src="./scripts.min.js" type="text/javascript")
