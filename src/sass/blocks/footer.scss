@@ -129,6 +129,7 @@
       margin: 0 auto;
       justify-content: center;
       flex-wrap: wrap;
+      flex-direction: column;
     }
     @include phones {
       width: auto;
@@ -141,11 +142,8 @@
     font-family: "Oranienbaum", sans-serif;
     margin-left: 2rem;
     padding: 0.4375rem;
-    &:last-child {
-      @include tablets {
-        margin-top: 2rem;
-        margin-left: 0; 
-      }
+    @include tablets{
+      margin: 1rem 0 0 0;
     }
     @include phones {
       font-family: Gilroy, sans-serif;

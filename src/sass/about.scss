@@ -6,6 +6,18 @@
     position: relative;
     display: flex;
     align-items: center;
+    overflow: hidden;
+    @include phones {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem 0;
+    }
+    &--first .about__heading-bg {
+      @include phones {
+        display: none;
+        padding: 0;
+      }
+    }
     &-front {
       font-family: Gilroy, sans-serif;
       font-style: normal;
@@ -13,16 +25,29 @@
       font-size: 4rem;
       color: #ec4e20;
       margin-left: 4rem;
+      @include tablets {
+        font-size: 3rem;
+        margin-left: 2rem;
+      }
+      @include phones {
+        font-size: 2rem;
+        margin-left: 1rem;
+      }
     }
     &-bg {
       color: rgba(45, 156, 219, 0.05);
       position: absolute;
-      bottom: -25%;
       font-size: 6.25rem;
       font-family: Gilroy, sans-serif;
       font-style: normal;
       font-weight: 800;
       white-space: nowrap;
+      @include tablets {
+        font-size: 5.25rem;
+      }
+      @include phones{
+        bottom: 7%;
+      }
     }
     &-text {
       font-family: Gilroy, sans-serif;
@@ -34,6 +59,16 @@
       max-width: 29.375rem;
       align-items: center;
       margin-left: 6.125rem;
+      @include tablets {
+        font-size: 1rem;
+        max-width: 15.375rem;
+      }
+      @include phones {
+        flex-direction: column;
+        max-width: none;
+        align-items: flex-start;
+        margin-left: 1rem;
+      }
       &::before {
         content: "";
         display: block;
@@ -41,12 +76,23 @@
         height: 5.25rem;
         background: #2d9cdb;
         margin-right: 1.5rem;
+        @include phones {
+          width: 16.375rem;
+          height: 0.125rem;
+          margin: 0.75rem 0 1rem;
+        }
       }
     }
   }
   &__slider {
-    min-width: 33.375rem;
+    width: 100%;
+    max-width: 33.375rem;
     min-height: 22rem;
+    @include tablets {
+      order: 1;
+      max-width: none;
+      margin-bottom: 2.5rem;
+    }
   }
   &__list {
     display: flex;
@@ -55,10 +101,37 @@
   &__item {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10rem;
+    @include tablets {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 5rem;
+    }
     &-wrap {
       display: flex;
       flex-direction: column;
-      margin-right: 1.5rem;
+      @include tablets {
+        order: 2;
+      }
+      & .about__text,
+      & .about__sublist {
+        margin-left: 4rem;
+        @include tablets {
+          margin-left: 2rem;
+        }
+      }
+    }
+    &-wrap + .about__slider {
+      margin-left: 1.5rem;
+      @include tablets {
+        margin: 0 0 2.5rem 0;
+      }
+    }
+  }
+  &__slider + &__item-wrap {
+    margin-left: 1.5rem;
+    @include tablets {
+      margin: 1rem 0 0 0;
     }
   }
   &__text {
@@ -70,6 +143,9 @@
     max-width: 36.5rem;
     line-height: 161%;
     margin: 1rem 0 2rem;
+    &-par {
+      margin-top: 1.25rem;
+    }
   }
   &__sublist {
     display: flex;
@@ -102,11 +178,36 @@
     align-items: center;
     justify-content: space-between;
     margin: 4rem 0 6.5rem;
+    flex-wrap: wrap;
+    @include tablets {
+      justify-content: center;
+      margin: 3rem 0 5.5rem;
+    }
+    @include phones {
+      margin: 2rem 0 4.5rem;
+    }
   }
   &__subitem {
     margin-right: 1.5rem;
     display: flex;
     align-items: center;
+    margin-top: 1.5rem;
+    @include phones {
+      margin-right: 1rem;
+      width: 40%;
+    }
+    &-horse {
+      stroke: #333;
+      @include phones {
+        stroke: #eb5757;
+      }
+    }
+    &-icon {
+      fill: #333;
+      @include phones {
+        fill: #eb5757;
+      }
+    }
     &-heading {
       font-family: Gilroy, sans-serif;
       font-style: normal;
@@ -114,9 +215,17 @@
       font-size: 0.875rem;
       color: #333333;
       opacity: 0.6;
+      @include phones {
+        color: #eb5757;
+      }
     }
     &-wrap {
       margin-left: 1rem;
+      & .features__text {
+        @include phones {
+          color: #eb5757;
+        }
+      }
     }
   }
   &__text {
@@ -134,27 +243,45 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 3rem;
+    padding: 0 2.5rem;
     justify-content: center;
     width: 100%;
+    @include tablets {
+      padding: 0 0 0 2.5rem;
+    }
+    @include phones {
+      padding: 0 0 0 1rem;
+    }
   }
   &__item {
-    width: 48%;
+    width: 47%;
     margin-right: 1rem;
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
+    @include tablets {
+      width: 100%;
+    }
+    @include phones {
+      order: 2;
+      margin-right: 0;
+    }
     & .features__text {
       max-width: 27.5rem;
     }
     &-icon {
       margin-right: 2rem;
+      max-width: 2rem;
+      width: 100%;
     }
     &:last-child {
       margin-top: 1rem;
       padding: 0.75rem;
       border: 0.03125rem solid #898989;
       border-radius: 0.1875rem;
+      @include phones {
+        order: 1;
+      }
     }
   }
 }
@@ -164,6 +291,12 @@
   padding: 0 3rem;
   cursor: pointer;
   margin-top: 3.5rem;
+  @include tablets {
+    padding: 0 1rem;
+  }
+  @include phones {
+    padding: 0;
+  }
   & .disable {
     display: none;
   }
@@ -229,16 +362,16 @@
       }
     }
   }
-  &__right{
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
+  &__right {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
-  &__left{
+  &__left {
     position: absolute;
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-}
+  }
 }

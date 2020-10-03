@@ -11,7 +11,7 @@ html(lang="en")
             include ./blocks/header.pug
             div(class="container")
                 div(class="about")
-                    div(class="about__heading")
+                    div(class="about__heading about__heading--first")
                         h1(class="about__heading-front") Живой пример
                         h1(class="about__heading-bg") Живой пример
                         div(class="about__heading-text") флагманский продукт экстра-классас созданием обычной топовой страны.
@@ -23,37 +23,37 @@ html(lang="en")
                     div(class="features")
                         ul(class="features__sublist")
                             li(class="features__subitem")
-                                svg(width="27" height="28" viewBox="0 0 27 28") 
+                                svg(class="features__subitem-icon" width="27" height="28" viewBox="0 0 27 28") 
                                     use(xlink:href="./imgs/sprites.svg#area")
                                 div(class="features__subitem-wrap") 
                                     span(class="features__subitem-heading") Площадь
                                     div(class="features__text") 11,1 га
                             li(class="features__subitem")
-                                svg(width="27" height="28" viewBox="0 0 27 28") 
+                                svg(class="features__subitem-icon" width="27" height="28" viewBox="0 0 27 28") 
                                     use(xlink:href="./imgs/sprites.svg#stages")
                                 div(class="features__subitem-wrap") 
                                     span(class="features__subitem-heading") Этапы
                                     div(class="features__text") от <span class="features__text-style">9</span> до <span class="features__text-style">18</span>
                             li(class="features__subitem")
-                                svg(width="28" height="34" viewBox="0 0 28 34") 
+                                svg(class="features__subitem-icon" width="28" height="34" viewBox="0 0 28 34") 
                                     use(xlink:href="./imgs/sprites.svg#compilation")
                                 div(class="features__subitem-wrap") 
                                     span(class="features__subitem-heading") Подборка
                                     div(class="features__text") более <span class="features__text-style">8 000</span> продукт 
                             li(class="features__subitem")
-                                svg(width="33" height="28" viewBox="0 0 33 28") 
+                                svg(class="features__subitem-horse" width="33" height="28" viewBox="0 0 33 28") 
                                     use(xlink:href="./imgs/sprites.svg#horse")
                                 div(class="features__subitem-wrap") 
                                     span(class="features__subitem-heading") 4 Детских тапка
                                     div(class="features__text") на <span class="features__text-style">940</span> людей
                             li(class="features__subitem")
-                                svg(width="27" height="28" viewBox="0 0 27 28") 
+                                svg(class="features__subitem-icon" width="27" height="28" viewBox="0 0 27 28") 
                                     use(xlink:href="./imgs/sprites.svg#books")
                                 div(class="features__subitem-wrap") 
                                     span(class="features__subitem-heading") Книги
                                     div(class="features__text") на <span class="features__text-style">1 100</span> гбайт
                             li(class="features__subitem")
-                                svg(width="28" height="28" viewBox="0 0 28 28") 
+                                svg(class="features__subitem-icon" width="28" height="28" viewBox="0 0 28 28") 
                                     use(xlink:href="./imgs/sprites.svg#parking")
                                 div(class="features__subitem-wrap") 
                                     span(class="features__subitem-heading") Стоянка
@@ -93,7 +93,9 @@ html(lang="en")
                                 div(class="about__heading")
                                     h1(class="about__heading-front") Блок1
                                     h1(class="about__heading-bg") Блок1 Блок1 Блок1
-                                div(class="about__text") Таким образом, социально-экономическое развитие способствует повышению актуальности позиций, занимаемых участниками в отношении поставленных задач? С другой стороны рамки и место обучения кадров требует от нас системного анализа системы.
+                                div(class="about__text") 
+                                    p(class="about__text-par") Таким образом, социально-экономическое развитие способствует повышению актуальности позиций, занимаемых участниками в отношении поставленных задач? С другой стороны рамки и место обучения кадров требует от нас системного анализа системы.
+                                    p(class="about__text-par") Таким образом, социально-экономическое развитие способствует повышению актуальности позиций, занимаемых участниками в отношении поставленных задач? С другой стороны рамки и место обучения кадров требует от нас системного анализа системы.
                                 ul(class="about__sublist")
                                     li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
                                     li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
@@ -121,5 +123,107 @@ html(lang="en")
                                     button(class="slider__left") 
                                         svg(width="32" height="32" viewBox="0 0 32 32") 
                                             use(xlink:href="./imgs/sprites.svg#slider-left")
+                        li(class="about__item")
+                            div(class="about__slider")
+                                div(class="slider")
+                                    ul(class="slider__breadcrumbs")
+                                        li(class="slider__breadcrumbs-item active")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                    ul(class="slider__list")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                    button(class="slider__right")
+                                        svg(width="32" height="32" viewBox="0 0 32 32") 
+                                            use(xlink:href="./imgs/sprites.svg#slider-right")
+                                    button(class="slider__left") 
+                                        svg(width="32" height="32" viewBox="0 0 32 32") 
+                                            use(xlink:href="./imgs/sprites.svg#slider-left")
+                            div(class="about__item-wrap")
+                                div(class="about__heading")
+                                    h1(class="about__heading-front") Блок1
+                                    h1(class="about__heading-bg") Блок1 Блок1 Блок1
+                                div(class="about__text") 
+                                    p() Таким образом, социально-экономическое развитие способствует повышению актуальности позиций, занимаемых участниками в отношении поставленных задач? С другой стороны рамки и место обучения кадров требует от нас системного анализа системы.
+                                ul(class="about__sublist")
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                        li(class="about__item")
+                            div(class="about__item-wrap")
+                                div(class="about__heading")
+                                    h1(class="about__heading-front") Блок1
+                                    h1(class="about__heading-bg") Блок1 Блок1 Блок1
+                                div(class="about__text") 
+                                    p() Таким образом, социально-экономическое развитие способствует повышению актуальности позиций, занимаемых участниками в отношении поставленных задач? С другой стороны рамки и место обучения кадров требует от нас системного анализа системы.
+                                ul(class="about__sublist")
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                            div(class="about__slider")
+                                div(class="slider")
+                                    ul(class="slider__breadcrumbs")
+                                        li(class="slider__breadcrumbs-item active")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                    ul(class="slider__list")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                    button(class="slider__right")
+                                        svg(width="32" height="32" viewBox="0 0 32 32") 
+                                            use(xlink:href="./imgs/sprites.svg#slider-right")
+                                    button(class="slider__left") 
+                                        svg(width="32" height="32" viewBox="0 0 32 32") 
+                                            use(xlink:href="./imgs/sprites.svg#slider-left")
+                        li(class="about__item")
+                            div(class="about__slider")
+                                div(class="slider")
+                                    ul(class="slider__breadcrumbs")
+                                        li(class="slider__breadcrumbs-item active")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                        li(class="slider__breadcrumbs-item")
+                                    ul(class="slider__list")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                        li(class="slider__item")
+                                    button(class="slider__right")
+                                        svg(width="32" height="32" viewBox="0 0 32 32") 
+                                            use(xlink:href="./imgs/sprites.svg#slider-right")
+                                    button(class="slider__left") 
+                                        svg(width="32" height="32" viewBox="0 0 32 32") 
+                                            use(xlink:href="./imgs/sprites.svg#slider-left")
+                            div(class="about__item-wrap")
+                                div(class="about__heading")
+                                    h1(class="about__heading-front") Блок1
+                                    h1(class="about__heading-bg") Блок1 Блок1 Блок1
+                                div(class="about__text") 
+                                    p() Таким образом, социально-экономическое развитие способствует повышению актуальности позиций, занимаемых участниками в отношении поставленных задач? С другой стороны рамки и место обучения кадров требует от нас системного анализа системы.
+                                ul(class="about__sublist")
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
+                                    li(class="about__subitem") Вольный Золоченый Некто Няня Патологический
             include ./blocks/footer.pug
         script(src="./scripts.min.js" type="text/javascript")
